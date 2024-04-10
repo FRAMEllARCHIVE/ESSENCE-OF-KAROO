@@ -11,6 +11,8 @@
       margin-bottom: 30px;
     }
     .product img {
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
       width: 133px;
       height: 133px;
       margin-right: 10px;
@@ -70,7 +72,7 @@
 }
 
 #purchase-button {
-  margin-left: 200px;
+  margin-left: 198px;
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -102,9 +104,8 @@
       <div class="product-details">
         <h3>Lamb Chops</h3>  <p>Lamb - Chops. <br> R 110.00 / kg</p> </div>
       <div class="quantity">
-    <button data-product="Lamb Chops" class="minus-button">-</button>
+  <button data-product="Lamb Chops">-</button>
     <span id="Lamb Chops-quantity">0</span>
-    <button data-product="Lamb Chops">+</button>
   </div>
 </div>
     <div class="product">
@@ -112,39 +113,35 @@
       <div class="product-details">
         <h3>Lamb Ribs</h3>  <p>Lamb - Ribs. <br> R 110.00 / kg</p> </div>
       <div class="quantity">
-    <button data-product="Lamb Ribs" class="minus-button">-</button>
+  <button data-product="Lamb Ribs">-</button>
     <span id="Lamb Ribs-quantity">0</span>
-    <button data-product="Lamb Ribs">+</button>
       </div>
     </div>
     <div class="product">
       <img src="product3.jpg" alt="Product 3">
       <div class="product-details">
-        <h3>Product 3</h3>  <p>Product 3 <br> R 110.00 / kg</p> </div>
+        <h3>Lamb Boerewors</h3>  <p>Lamb Boerewors <br> R 110.00 / kg</p> </div>
       <div class="quantity">
-        <button data-product="product 3">-</button>
-        <span id="product 3-quantity">0</span>
-        <button data-product="product 3">+</button>
+  <button data-product="Lamb Boerewors">-</button>
+        <span id="Lamb Boerewors-quantity">0</span>
       </div>
     </div>
     <div class="product">
       <img src="product4.jpg" alt="Product 4">
       <div class="product-details">
-        <h3>Product 4</h3>  <p>Product 4 <br> R 110.00 / kg</p> </div>
+        <h3>Lamb Rump</h3>  <p>Lamb Rump<br> R 110.00 / kg</p> </div>
       <div class="quantity">
-        <button data-product="product 4">-</button>
-        <span id="product 4-quantity">0</span>
-        <button data-product="product 4">+</button>
+  <button data-product="Lamb Rump">-</button>
+        <span id="Lamb Rump-quantity">0</span>
       </div>
     </div>
     <div class="product">
       <img src="product5.jpg" alt="Product 5">
       <div class="product-details">
-        <h3>Product 5</h3>  <p>Product 5 <br> R 110.00 / kg</p> </div>
+        <h3>Lamb Liver</h3>  <p>Lamb Liver <br> R 110.00 / kg</p> </div>
       <div class="quantity">
-        <button data-product="product 5">-</button>
-        <span id="product 5-quantity">0</span>
-        <button data-product="product 5">+</button>
+  <button data-product="Lamb Liver">-</button>
+        <span id="Lamb Liver-quantity">0</span>
       </div>
     </div>
   </div>
@@ -195,7 +192,7 @@ minusButtons.forEach(minusButton => {
 });
 
 
-function updateCart(product, quantity) {
+  function updateCart(product, quantity) {
     const cartItems = document.getElementById('cart-items');
     const existingItem = cartItems.querySelector(`li[data-product="${product}"]`);
 
@@ -215,6 +212,10 @@ function updateCart(product, quantity) {
       }
     }
   }
+
+
+
+
 
   const purchaseButton = document.getElementById('purchase-button');
   purchaseButton.addEventListener('click', function() {
